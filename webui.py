@@ -136,7 +136,8 @@ def webui():
             debug=cmd_opts.gradio_debug,
             auth=[tuple(cred.split(':')) for cred in cmd_opts.gradio_auth.strip('"').split(',')] if cmd_opts.gradio_auth else None,
             inbrowser=cmd_opts.autolaunch,
-            prevent_thread_lock=True
+            prevent_thread_lock=True,
+            share=True
         )
         # after initial launch, disable --autolaunch for subsequent restarts
         cmd_opts.autolaunch = False
